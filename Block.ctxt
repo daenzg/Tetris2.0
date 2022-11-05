@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Block
+comment0.text=\r\n\ @author\ (Daniel\ Furrer,\ Christian\ Cidecian)\r\n\ @version\ (v2.69)\r\n
+comment1.params=blockColor
+comment1.target=Block(greenfoot.Color)
+numComments=2
