@@ -49,7 +49,7 @@ public class Game extends World
             dropped = true;                                                     //Blöcke schneller senken
             downHeld = true;                                                    //
         }
-        else if (!Greenfoot.isKeyDown("down"))
+        else if (!Greenfoot.isKeyDown("down")) 
         {
             dropped = false;                                                    //Sicherstellen dass Blöcke nicht schneller gesenkt werden
             downHeld = false;                                                   //
@@ -75,11 +75,11 @@ public class Game extends World
         else { delay++; }
         
         boolean shapeWillCollide = 
-            (curShape == BlockType.I && rotation == 90 ||                                                                   //
+            (curShape == BlockType.I && rotation == 90 ||                                                               //
             (curShape == BlockType.J || curShape == BlockType.L) && (rotation == 90 || rotation == 270) ||              //
-            (curShape == BlockType.S || curShape == BlockType.Z) && (rotation == 90) ||                                 //Prüft ob bei Rotierung die Form mir der Wand Kollidiert
-            curShape == BlockType.T && (rotation == 90 || rotation == 270)                                                  //
-            );                                                                                                                  //
+            (curShape == BlockType.S || curShape == BlockType.Z) && (rotation == 90) ||                                 //Prüft ob bei Rotierung die Form mir der Wand kollidiert
+            curShape == BlockType.T && (rotation == 90 || rotation == 270)                                              //
+            );                                                                                                          //
         
         boolean stopRotateLeft = shapeWillCollide && collideLeft || curShape == BlockType.I && rotation == 90 && curBlocks[0].getX() + 1 <= 2;              // Blockiert drehung wenn sie nicht möglich ist.
         boolean stopRotateRight = shapeWillCollide && collideRight || curShape == BlockType.I && rotation == 90 && curBlocks[0].getX() + 1 >= getWidth();   //
@@ -103,13 +103,13 @@ public class Game extends World
             rotatedRight = false;                                                                                       //
         }                                                                                                               //
         
-        if ((time >= gravity || (dropped && time > drop)) && !collideBottomStop())                                          //
+        if ((time >= gravity || (dropped && time > drop)) && !collideBottomStop())                                      //
         {                                                                                                               //
             time = 0;                                                                                                   //
-            curBlocks[0].setLocation(curBlocks[0].getX(), curBlocks[0].getY() + 1);                         //
-            curBlocks[1].setLocation(curBlocks[1].getX(), curBlocks[1].getY() + 1);                         // Bewegung des Blockes nach unten
-            curBlocks[2].setLocation(curBlocks[2].getX(), curBlocks[2].getY() + 1);                         //
-            curBlocks[3].setLocation(curBlocks[3].getX(), curBlocks[3].getY() + 1);                         //
+            curBlocks[0].setLocation(curBlocks[0].getX(), curBlocks[0].getY() + 1);                                     //
+            curBlocks[1].setLocation(curBlocks[1].getX(), curBlocks[1].getY() + 1);                                     // Bewegung des Blockes nach unten
+            curBlocks[2].setLocation(curBlocks[2].getX(), curBlocks[2].getY() + 1);                                     //
+            curBlocks[3].setLocation(curBlocks[3].getX(), curBlocks[3].getY() + 1);                                     //
         }                                                                                                               //
     }
     
@@ -151,7 +151,7 @@ public class Game extends World
             rows[curBlocks[3].getY()]++;
             checkRows();
             newBlocks();
-            return true;
+            return true;   
         }
         return false;
     }
